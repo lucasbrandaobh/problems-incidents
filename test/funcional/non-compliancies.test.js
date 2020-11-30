@@ -18,22 +18,22 @@ describe('Não Conformidades: Testes funcionais', () => {
     await instanceServer.stop();
   });
   afterEach(async () => {
-    await dropCollections(['naoConformidades']);
+    await dropCollections(['nonCompliancies']);
   });
   it('GET 200, Obter não conformidades da base com sucesso.', async () => {
-    const naoConformidade = fixtures.naoConformidade.create();
-    await getCollection('naoConformidades').insertOne(naoConformidade);
+    const nonCompliancies = fixtures.nonCompliancies.create();
+    await getCollection('nonCompliancies').insertOne(nonCompliancies);
     const { body, statusCode } = await request(app)
-      .get('/nao-conformidades')
+      .get('/non-compliancies')
       .set('authorization', `bearer ${token}`)
     assert.strictEqual(statusCode, 200);
     assert.strictEqual(body.length, 1);
   });
   it('POST 201, Inserir conformidades na base com sucesso.', async () => {
-    const naoConformidade = fixtures.naoConformidade.create();
+    const nonCompliancies = fixtures.nonCompliancies.create();
     const { body, statusCode } = await request(app)
-      .post('/nao-conformidades')
-      .send(naoConformidade)
+      .post('/non-compliancies')
+      .send(nonCompliancies)
       .set('authorization', `bearer ${token}`)
     assert.strictEqual(statusCode, 201);
   });

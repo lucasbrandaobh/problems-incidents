@@ -1,5 +1,5 @@
 {
-  "name": "incidentes_problemas",
+  "name": "problems-incidents",
   "version": "1.0.0",
   "description": "Projetos de conclusão de curso SGQ - API de Incidentes e Problemas",
   "main": "index.js",

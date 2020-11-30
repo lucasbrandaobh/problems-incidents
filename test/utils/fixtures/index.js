@@ -1,7 +1,7 @@
-const naoConformidade = require('./nao-conformidade');
+const nonCompliancies = require('./non-compliancies');
 const authTokens = require('./auth-token');
 
 module.exports = {
-  naoConformidade,
+  nonCompliancies,
   authTokens
 };
